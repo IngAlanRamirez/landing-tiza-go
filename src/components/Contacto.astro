@@ -1,0 +1,56 @@
+---
+// Formulario de contacto/interés para Tiza Go
+---
+
+<section class="py-12 bg-white text-dark">
+  <div class="max-w-lg mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">
+      ¿Te interesa Tiza Go?
+    </h2>
+    <form
+      action="https://formspree.io/f/XXXXXXXX"
+      method="POST"
+      class="space-y-4 bg-light p-6 rounded-xl shadow"
+    >
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Nombre"
+        required
+        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
+      />
+      <input
+        type="text"
+        name="negocio"
+        placeholder="Negocio"
+        required
+        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
+      />
+      <input
+        type="text"
+        name="colonia"
+        placeholder="Colonia"
+        required
+        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
+      />
+      <input
+        type="tel"
+        name="telefono"
+        placeholder="Teléfono"
+        required
+        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
+      />
+      <textarea
+        name="mensaje"
+        placeholder="Mensaje"
+        rows="3"
+        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
+      ></textarea>
+      <button
+        type="submit"
+        class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3 rounded transition"
+        >Enviar</button
+      >
+    </form>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+---
+// Componente de preguntas frecuentes para Tiza Go
+const faqs = [
+  {
+    q: "¿Qué es Tiza Go?",
+    a: "Es la app de entregas local más rápida y cercana de Tizayuca.",
+  },
+  {
+    q: "¿Cómo puedo aparecer con mi negocio?",
+    a: "Contáctanos por WhatsApp y te registramos gratis.",
+  },
+  {
+    q: "¿Cuándo estará disponible?",
+    a: "Muy pronto, estamos preparando el lanzamiento.",
+  },
+  {
+    q: "¿Tiene algún costo?",
+    a: "No, el registro de negocios es gratuito.",
+  },
+  {
+    q: "¿Entregan en todo Tizayuca?",
+    a: "Sí, cubrimos todas las colonias principales.",
+  },
+];
+---
+
+<section class="py-12 bg-light text-dark">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">
+      Preguntas frecuentes
+    </h2>
+    <div class="space-y-6">
+      {
+        faqs.map((faq) => (
+          <details class="bg-white rounded-lg shadow p-4 group">
+            <summary class="font-semibold cursor-pointer group-open:text-primary transition">
+              {faq.q}
+            </summary>
+            <p class="mt-2 text-gray-700">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

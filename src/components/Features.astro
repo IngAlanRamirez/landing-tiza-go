@@ -1,0 +1,43 @@
+---
+// Componente de características/beneficios de Tiza Go
+const features = [
+  {
+    icon: "🚀",
+    title: "Entregas locales en minutos",
+  },
+  {
+    icon: "🏪",
+    title: "Negocios de Tizayuca, 100% local",
+  },
+  {
+    icon: "💬",
+    title: "Contacto directo por WhatsApp",
+  },
+  {
+    icon: "⚡",
+    title: "Más rápido que cualquier app externa",
+  },
+  {
+    icon: "🍲",
+    title: "Ideal para tianguis, fondas y cocinas económicas",
+  },
+];
+---
+
+<section class="py-12 bg-light text-dark">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">
+      ¿Por qué elegir Tiza Go?
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        features.map((feature) => (
+          <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
+            <div class="text-4xl mb-3">{feature.icon}</div>
+            <p class="text-lg font-semibold text-center">{feature.title}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

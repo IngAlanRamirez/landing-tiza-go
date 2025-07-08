@@ -1,0 +1,29 @@
+---
+// Componente de slogans rotativos para Tiza Go
+const slogans = [
+  "Desde el mercado al fraccionamiento, volando con Tiza Go.",
+  "Aquí no hay Uber Eats, pero sí hay Tiza Go.",
+  "Más rápido que el de la bici del centro.",
+];
+---
+
+<section class="py-8 bg-primary text-light text-center">
+  <div
+    class="text-xl md:text-2xl font-semibold transition-all duration-500"
+    data-slogan
+  >
+    {slogans[0]}
+  </div>
+  <script type="module">
+    const slogans = [
+      "Desde el mercado al fraccionamiento, volando con Tiza Go.",
+      "Aquí no hay Uber Eats, pero sí hay Tiza Go.",
+      "Más rápido que el de la bici del centro.",
+    ];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % slogans.length;
+      document.querySelector("[data-slogan]").textContent = slogans[idx];
+    }, 3500);
+  </script>
+</section>
