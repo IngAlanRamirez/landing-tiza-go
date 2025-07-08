@@ -1,56 +1,266 @@
 ---
-// Formulario de contacto/interés para Tiza Go
+// Formulario de contacto/interés para Tiza Go con glasmorfismo
 ---
 
-<section class="py-12 bg-white text-dark">
-  <div class="max-w-lg mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">
-      ¿Te interesa Tiza Go?
-    </h2>
-    <form
-      action="https://formspree.io/f/XXXXXXXX"
-      method="POST"
-      class="space-y-4 bg-light p-6 rounded-xl shadow"
-    >
-      <input
-        type="text"
-        name="nombre"
-        placeholder="Nombre"
-        required
-        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
-      />
-      <input
-        type="text"
-        name="negocio"
-        placeholder="Negocio"
-        required
-        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
-      />
-      <input
-        type="text"
-        name="colonia"
-        placeholder="Colonia"
-        required
-        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
-      />
-      <input
-        type="tel"
-        name="telefono"
-        placeholder="Teléfono"
-        required
-        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
-      />
-      <textarea
-        name="mensaje"
-        placeholder="Mensaje"
-        rows="3"
-        class="w-full p-3 rounded border border-gray-300 focus:border-primary outline-none"
-      ></textarea>
-      <button
-        type="submit"
-        class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3 rounded transition"
-        >Enviar</button
+<section class="py-20 relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-4">
+    <!-- Título de la sección -->
+    <div class="text-center mb-16">
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 animate-fade-in"
       >
-    </form>
+        <span
+          class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
+        >
+          ¿Te interesa
+        </span>
+        <br />
+        <span class="text-white">TIZA GO?</span>
+      </h2>
+      <p
+        class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto animate-fade-in"
+        style="animation-delay: 0.3s;"
+      >
+        Regístrate ahora y sé parte de la revolución de entregas locales
+      </p>
+    </div>
+
+    <!-- Formulario principal -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Información adicional -->
+      <div class="space-y-8 animate-fade-in" style="animation-delay: 0.4s;">
+        <div class="glass rounded-3xl p-8">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            🚀 ¡Únete a la familia Tiza Go!
+          </h3>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-2xl"
+              >
+                📱
+              </div>
+              <div>
+                <h4 class="text-white font-semibold">Registro gratuito</h4>
+                <p class="text-white/70">Sin costos de inscripción</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-2xl"
+              >
+                💬
+              </div>
+              <div>
+                <h4 class="text-white font-semibold">Contacto directo</h4>
+                <p class="text-white/70">Comunicación por WhatsApp</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gradient-to-r from-accent-500 to-primary-500 rounded-full flex items-center justify-center text-2xl"
+              >
+                🎯
+              </div>
+              <div>
+                <h4 class="text-white font-semibold">Cobertura local</h4>
+                <p class="text-white/70">Especialistas en Tizayuca</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="glass rounded-3xl p-8">
+          <div class="grid grid-cols-2 gap-6 text-center">
+            <div>
+              <div class="text-3xl md:text-4xl font-black text-white mb-2">
+                100+
+              </div>
+              <div class="text-white/70">Negocios interesados</div>
+            </div>
+            <div>
+              <div class="text-3xl md:text-4xl font-black text-white mb-2">
+                24/7
+              </div>
+              <div class="text-white/70">Soporte disponible</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="animate-fade-in" style="animation-delay: 0.6s;">
+        <div class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <!-- Efecto de fondo -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-3xl"
+          >
+          </div>
+
+          <form
+            action="https://formspree.io/f/XXXXXXXX"
+            method="POST"
+            class="space-y-6 relative z-10"
+          >
+            <h3
+              class="text-2xl md:text-3xl font-bold text-white mb-6 text-center"
+            >
+              📝 Registro de Negocio
+            </h3>
+
+            <!-- Nombre -->
+            <div class="relative">
+              <label class="block text-white font-semibold mb-2"
+                >👤 Nombre completo</label
+              >
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Ej. Juan Pérez"
+                required
+                class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:border-primary-500 focus:bg-white/20 outline-none backdrop-blur-sm transition-all duration-300"
+              />
+            </div>
+
+            <!-- Negocio -->
+            <div class="relative">
+              <label class="block text-white font-semibold mb-2"
+                >🏪 Nombre del negocio</label
+              >
+              <input
+                type="text"
+                name="negocio"
+                placeholder="Ej. Tacos Don Juan"
+                required
+                class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:border-primary-500 focus:bg-white/20 outline-none backdrop-blur-sm transition-all duration-300"
+              />
+            </div>
+
+            <!-- Colonia -->
+            <div class="relative">
+              <label class="block text-white font-semibold mb-2"
+                >📍 Colonia</label
+              >
+              <input
+                type="text"
+                name="colonia"
+                placeholder="Ej. Centro, Hacienda Grande"
+                required
+                class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:border-primary-500 focus:bg-white/20 outline-none backdrop-blur-sm transition-all duration-300"
+              />
+            </div>
+
+            <!-- Teléfono -->
+            <div class="relative">
+              <label class="block text-white font-semibold mb-2"
+                >📱 Teléfono</label
+              >
+              <input
+                type="tel"
+                name="telefono"
+                placeholder="Ej. 771-123-4567"
+                required
+                class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:border-primary-500 focus:bg-white/20 outline-none backdrop-blur-sm transition-all duration-300"
+              />
+            </div>
+
+            <!-- Mensaje -->
+            <div class="relative">
+              <label class="block text-white font-semibold mb-2"
+                >💬 Mensaje (opcional)</label
+              >
+              <textarea
+                name="mensaje"
+                placeholder="Cuéntanos más sobre tu negocio..."
+                rows="3"
+                class="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:border-primary-500 focus:bg-white/20 outline-none backdrop-blur-sm transition-all duration-300 resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Botón de envío -->
+            <button
+              type="submit"
+              class="group relative w-full bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white font-bold py-4 px-8 rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-105 animate-glow"
+            >
+              <span class="relative z-10 text-lg">
+                🚀 Registrar mi negocio GRATIS
+              </span>
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl blur opacity-0 group-hover:opacity-70 transition-opacity"
+              >
+              </div>
+            </button>
+
+            <!-- Mensaje de confirmación -->
+            <p class="text-center text-white/70 text-sm">
+              ✅ Te contactaremos en menos de 24 horas por WhatsApp
+            </p>
+          </form>
+
+          <!-- Elementos decorativos -->
+          <div
+            class="absolute top-4 right-4 w-4 h-4 bg-primary-500/30 rounded-full animate-ping"
+          >
+          </div>
+          <div
+            class="absolute bottom-4 left-4 w-3 h-3 bg-accent-500/30 rounded-full animate-ping"
+            style="animation-delay: 1s;"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonios rápidos -->
+    <div
+      class="mt-16 text-center animate-fade-in"
+      style="animation-delay: 0.8s;"
+    >
+      <div class="glass rounded-3xl p-8 md:p-12">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-8">
+          💬 Lo que dicen los negocios locales
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass-dark rounded-xl p-6">
+            <p class="text-white/90 italic mb-4">
+              "¡Esperamos con ansias que llegue Tiza Go!"
+            </p>
+            <p class="text-primary-400 font-semibold">- Doña María, Fonda</p>
+          </div>
+
+          <div class="glass-dark rounded-xl p-6">
+            <p class="text-white/90 italic mb-4">
+              "Finalmente una app pensada para nosotros"
+            </p>
+            <p class="text-primary-400 font-semibold">- Carlos, Tienda</p>
+          </div>
+
+          <div class="glass-dark rounded-xl p-6">
+            <p class="text-white/90 italic mb-4">
+              "Perfecto para negocios locales"
+            </p>
+            <p class="text-primary-400 font-semibold">
+              - Ana, Cocina económica
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elementos decorativos de fondo -->
+  <div
+    class="absolute top-20 left-10 w-32 h-32 bg-primary-500/10 rounded-full blur-xl animate-float"
+  >
+  </div>
+  <div
+    class="absolute bottom-20 right-10 w-40 h-40 bg-accent-500/10 rounded-full blur-xl animate-float"
+    style="animation-delay: 1s;"
+  >
   </div>
 </section>

@@ -1,45 +1,129 @@
 ---
-// Componente de preguntas frecuentes para Tiza Go
+// Componente de preguntas frecuentes para Tiza Go con glasmorfismo
 const faqs = [
   {
     q: "¿Qué es Tiza Go?",
-    a: "Es la app de entregas local más rápida y cercana de Tizayuca.",
+    a: "Es la app de entregas local más rápida y cercana de Tizayuca. Conectamos negocios locales con clientes de toda la ciudad.",
+    icon: "🚀",
   },
   {
-    q: "¿Cómo puedo aparecer con mi negocio?",
-    a: "Contáctanos por WhatsApp y te registramos gratis.",
+    q: "¿Cómo puedo registrar mi negocio?",
+    a: "¡Súper fácil! Contáctanos por WhatsApp y te registramos gratis. Solo necesitas tu información básica y listo.",
+    icon: "🏪",
   },
   {
     q: "¿Cuándo estará disponible?",
-    a: "Muy pronto, estamos preparando el lanzamiento.",
+    a: "Muy pronto, estamos en la fase final de desarrollo. Serás de los primeros en saberlo si te registras ahora.",
+    icon: "⏰",
   },
   {
-    q: "¿Tiene algún costo?",
-    a: "No, el registro de negocios es gratuito.",
+    q: "¿Tiene algún costo para negocios?",
+    a: "¡No! El registro de negocios es completamente gratuito. Solo cobramos una pequeña comisión por pedido exitoso.",
+    icon: "💰",
   },
   {
     q: "¿Entregan en todo Tizayuca?",
-    a: "Sí, cubrimos todas las colonias principales.",
+    a: "¡Sí! Cubrimos todas las colonias principales de Tizayuca. Desde el centro hasta los fraccionamientos más alejados.",
+    icon: "🗺️",
+  },
+  {
+    q: "¿Cómo funciona el sistema de entregas?",
+    a: "Los repartidores locales recogen tu pedido y lo entregan directamente. Seguimiento en tiempo real por WhatsApp.",
+    icon: "🏍️",
   },
 ];
 ---
 
-<section class="py-12 bg-light text-dark">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">
-      Preguntas frecuentes
-    </h2>
+<section class="py-20 relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-4">
+    <!-- Título de la sección -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 animate-fade-in">
+        <span class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+          Preguntas
+        </span>
+        <br>
+        <span class="text-white">FRECUENTES</span>
+      </h2>
+      <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.3s;">
+        Resolvemos todas tus dudas sobre Tiza Go
+      </p>
+    </div>
+    
+    <!-- FAQ Items -->
     <div class="space-y-6">
-      {
-        faqs.map((faq) => (
-          <details class="bg-white rounded-lg shadow p-4 group">
-            <summary class="font-semibold cursor-pointer group-open:text-primary transition">
-              {faq.q}
+      {faqs.map((faq, index) => (
+        <div 
+          class="group glass hover:glass-dark rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-2xl animate-fade-in"
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <details class="group-hover:text-white transition-colors duration-300">
+            <summary class="flex items-center gap-4 p-6 md:p-8 cursor-pointer group-hover:bg-gradient-to-r group-hover:from-primary-500/20 group-hover:to-accent-500/20 transition-all duration-300">
+              <!-- Icono -->
+              <div class="text-3xl md:text-4xl flex-shrink-0 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                {faq.icon}
+              </div>
+              
+              <!-- Pregunta -->
+              <div class="flex-1">
+                <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-white transition-colors duration-300">
+                  {faq.q}
+                </h3>
+              </div>
+              
+              <!-- Indicador -->
+              <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center transform transition-transform duration-300 group-hover:bg-primary-500/50">
+                <svg class="w-4 h-4 text-white transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
             </summary>
-            <p class="mt-2 text-gray-700">{faq.a}</p>
+            
+            <!-- Respuesta -->
+            <div class="px-6 pb-6 md:px-8 md:pb-8 ml-12 md:ml-16">
+              <div class="glass-dark rounded-xl p-4 md:p-6 relative overflow-hidden">
+                <!-- Efecto de gradiente -->
+                <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-xl"></div>
+                
+                <p class="text-white/90 leading-relaxed relative z-10">
+                  {faq.a}
+                </p>
+                
+                <!-- Elementos decorativos -->
+                <div class="absolute top-2 right-2 w-2 h-2 bg-primary-500/30 rounded-full animate-ping"></div>
+                <div class="absolute bottom-2 left-2 w-1 h-1 bg-accent-500/30 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+              </div>
+            </div>
           </details>
-        ))
-      }
+        </div>
+      ))}
+    </div>
+    
+    <!-- Call to action -->
+    <div class="text-center mt-16 animate-fade-in" style="animation-delay: 0.8s;">
+      <div class="glass rounded-3xl p-8 md:p-12">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+          🤔 ¿Tienes más preguntas?
+        </h3>
+        <p class="text-white/80 text-lg mb-6 max-w-2xl mx-auto">
+          ¡No dudes en contactarnos! Estamos aquí para ayudarte con cualquier duda sobre Tiza Go
+        </p>
+        <a
+          href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20Tiza%20Go"
+          target="_blank"
+          rel="noopener"
+          class="group relative bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-8 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 animate-glow inline-block"
+        >
+          <span class="relative z-10">
+            💬 Pregúntanos por WhatsApp
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-full blur opacity-0 group-hover:opacity-70 transition-opacity"></div>
+        </a>
+      </div>
     </div>
   </div>
+  
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute top-10 right-10 w-24 h-24 bg-primary-500/10 rounded-full blur-xl animate-float"></div>
+  <div class="absolute bottom-10 left-10 w-32 h-32 bg-accent-500/10 rounded-full blur-xl animate-float" style="animation-delay: 1s;"></div>
 </section>

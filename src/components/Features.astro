@@ -1,43 +1,124 @@
 ---
-// Componente de características/beneficios de Tiza Go
+// Componente de características/beneficios de Tiza Go con glasmorfismo
 const features = [
   {
     icon: "🚀",
     title: "Entregas locales en minutos",
+    description: "La velocidad que necesitas para tu negocio",
+    color: "from-primary-500 to-primary-700",
   },
   {
     icon: "🏪",
     title: "Negocios de Tizayuca, 100% local",
+    description: "Apoyamos la economía local de nuestra ciudad",
+    color: "from-accent-500 to-accent-700",
   },
   {
     icon: "💬",
     title: "Contacto directo por WhatsApp",
+    description: "Comunicación directa y personal",
+    color: "from-green-500 to-green-700",
   },
   {
     icon: "⚡",
     title: "Más rápido que cualquier app externa",
+    description: "Optimizado para Tizayuca específicamente",
+    color: "from-primary-600 to-secondary-600",
   },
   {
     icon: "🍲",
-    title: "Ideal para tianguis, fondas y cocinas económicas",
+    title: "Ideal para tianguis, fondas y cocinas",
+    description: "Perfecto para negocios locales tradicionales",
+    color: "from-accent-600 to-primary-600",
+  },
+  {
+    icon: "🎯",
+    title: "Cobertura total en Tizayuca",
+    description: "Todas las colonias, todos los rincones",
+    color: "from-secondary-600 to-primary-600",
   },
 ];
 ---
 
-<section class="py-12 bg-light text-dark">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">
-      ¿Por qué elegir Tiza Go?
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {
-        features.map((feature) => (
-          <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <div class="text-4xl mb-3">{feature.icon}</div>
-            <p class="text-lg font-semibold text-center">{feature.title}</p>
+<section id="features" class="py-20 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Título de la sección -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 animate-fade-in">
+        <span class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+          ¿Por qué elegir
+        </span>
+        <br>
+        <span class="text-white">TIZA GO?</span>
+      </h2>
+      <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.3s;">
+        Descubre las ventajas de trabajar con la plataforma de entregas más innovadora de Tizayuca
+      </p>
+    </div>
+    
+    <!-- Grid de características -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature, index) => (
+        <div 
+          class="group glass hover:glass-dark rounded-3xl p-8 text-center relative overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer animate-fade-in"
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <!-- Efecto de hover gradient -->
+          <div class={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-3xl`}></div>
+          
+          <!-- Contenido -->
+          <div class="relative z-10">
+            <!-- Icono con efecto glow -->
+            <div class="relative mb-6">
+              <div class="text-6xl md:text-7xl mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+                {feature.icon}
+              </div>
+              <div class={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300`}></div>
+            </div>
+            
+            <!-- Título -->
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300">
+              {feature.title}
+            </h3>
+            
+            <!-- Descripción -->
+            <p class="text-white/70 group-hover:text-white/90 transition-colors duration-300 leading-relaxed">
+              {feature.description}
+            </p>
           </div>
-        ))
-      }
+          
+          <!-- Elementos decorativos -->
+          <div class="absolute top-4 right-4 w-4 h-4 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></div>
+          <div class="absolute bottom-4 left-4 w-3 h-3 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping" style="animation-delay: 0.5s;"></div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Call to action -->
+    <div class="text-center mt-16 animate-fade-in" style="animation-delay: 0.8s;">
+      <div class="glass rounded-3xl p-8 md:p-12 inline-block">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+          🎉 ¡Únete a la revolución de entregas locales!
+        </h3>
+        <p class="text-white/80 text-lg mb-6 max-w-2xl mx-auto">
+          Forma parte de la comunidad de negocios más exitosa de Tizayuca
+        </p>
+        <a
+          href="https://wa.me/521XXXXXXXXXX?text=Quiero%20saber%20más%20sobre%20Tiza%20Go"
+          target="_blank"
+          rel="noopener"
+          class="group relative bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white font-bold py-4 px-8 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 animate-glow inline-block"
+        >
+          <span class="relative z-10">
+            💬 Quiero saber más
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full blur opacity-0 group-hover:opacity-70 transition-opacity"></div>
+        </a>
+      </div>
     </div>
   </div>
+  
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute top-20 left-10 w-32 h-32 bg-primary-500/10 rounded-full blur-xl animate-float"></div>
+  <div class="absolute bottom-20 right-10 w-40 h-40 bg-accent-500/10 rounded-full blur-xl animate-float" style="animation-delay: 1s;"></div>
 </section>

@@ -1,49 +1,200 @@
 ---
-// Footer para Tiza Go
+// Footer para Tiza Go con glasmorfismo
 ---
 
-<footer class="bg-dark text-light py-8 mt-12">
-  <div
-    class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4"
-  >
-    <div class="text-center md:text-left">
-      <p class="font-bold text-lg">Tiza Go</p>
-      <p class="text-sm">Derechos reservados © Tiza Go 2025</p>
-    </div>
-    <div class="flex flex-col items-center md:items-end gap-2">
-      <a
-        href="https://wa.me/521XXXXXXXXXX"
-        class="hover:underline flex items-center gap-1"
-        target="_blank"
-        rel="noopener"
+<footer class="relative mt-20 py-16 overflow-hidden">
+  <!-- Contenedor principal con glasmorfismo -->
+  <div class="glass-dark backdrop-blur-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Contenido principal del footer -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <!-- Logo y descripción -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-4 mb-6">
+            <img
+              src="/TizaGO.png"
+              alt="Logo Tiza Go"
+              class="w-16 h-16 animate-glow object-contain"
+            />
+            <h3 class="text-3xl font-black text-white">
+              <span
+                class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
+              >
+                TIZA GO
+              </span>
+            </h3>
+          </div>
+          <p class="text-white/80 text-lg mb-6 max-w-md">
+            La plataforma de entregas local más rápida de Tizayuca. Conectamos
+            negocios locales con toda la ciudad.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="https://wa.me/521XXXXXXXXXX"
+              target="_blank"
+              rel="noopener"
+              class="group w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.463 3.488"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="group w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="group w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div>
+          <h4 class="text-xl font-bold text-white mb-6">🚀 Servicios</h4>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="#features"
+                class="text-white/70 hover:text-primary-400 transition-colors duration-300"
+                >Características</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-white/70 hover:text-primary-400 transition-colors duration-300"
+                >Para Negocios</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-white/70 hover:text-primary-400 transition-colors duration-300"
+                >Para Repartidores</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-white/70 hover:text-primary-400 transition-colors duration-300"
+                >Precios</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div>
+          <h4 class="text-xl font-bold text-white mb-6">📱 Contacto</h4>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="https://wa.me/521XXXXXXXXXX"
+                target="_blank"
+                rel="noopener"
+                class="text-white/70 hover:text-green-400 transition-colors duration-300 flex items-center gap-2"
+              >
+                <span>💬</span> WhatsApp
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:info@tizago.com"
+                class="text-white/70 hover:text-primary-400 transition-colors duration-300 flex items-center gap-2"
+              >
+                <span>✉️</span> Email
+              </a>
+            </li>
+            <li>
+              <span class="text-white/70 flex items-center gap-2">
+                <span>📍</span> Tizayuca, Hidalgo
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Separador -->
+      <div
+        class="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8"
       >
-        <span>WhatsApp</span>
-      </a>
-      <a href="#" class="hover:underline">Políticas de privacidad</a>
-      <div class="flex gap-2 mt-1">
-        <a href="#" class="hover:text-secondary"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            class="w-5 h-5"
-            ><path
-              d="M24 4.56v14.91a4.56 4.56 0 0 1-4.56 4.56H4.56A4.56 4.56 0 0 1 0 19.47V4.56A4.56 4.56 0 0 1 4.56 0h14.91A4.56 4.56 0 0 1 24 4.56zM8.09 19.47V9.29H5.08v10.18zm-1.5-11.5a1.74 1.74 0 1 1 1.74-1.74 1.74 1.74 0 0 1-1.74 1.74zm14.41 11.5v-5.6c0-1.34-.48-2.25-1.68-2.25a1.81 1.81 0 0 0-1.7 1.21 2.27 2.27 0 0 0-.11.81v5.83h-3V9.29h2.88v1.39h.04a3.16 3.16 0 0 1 2.85-1.57c2.08 0 3.65 1.36 3.65 4.29v6.06z"
-            ></path></svg
-          ></a
-        >
-        <a href="#" class="hover:text-secondary"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            class="w-5 h-5"
-            ><path
-              d="M24 4.56v14.91a4.56 4.56 0 0 1-4.56 4.56H4.56A4.56 4.56 0 0 1 0 19.47V4.56A4.56 4.56 0 0 1 4.56 0h14.91A4.56 4.56 0 0 1 24 4.56zM8.09 19.47V9.29H5.08v10.18zm-1.5-11.5a1.74 1.74 0 1 1 1.74-1.74 1.74 1.74 0 0 1-1.74 1.74zm14.41 11.5v-5.6c0-1.34-.48-2.25-1.68-2.25a1.81 1.81 0 0 0-1.7 1.21 2.27 2.27 0 0 0-.11.81v5.83h-3V9.29h2.88v1.39h.04a3.16 3.16 0 0 1 2.85-1.57c2.08 0 3.65 1.36 3.65 4.29v6.06z"
-            ></path></svg
-          ></a
-        >
+      </div>
+
+      <!-- Información legal -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-center md:text-left">
+          <p class="text-white/70 text-sm">
+            © 2025 <span class="text-primary-400 font-semibold">Tiza Go</span>.
+            Todos los derechos reservados.
+          </p>
+          <p class="text-white/60 text-xs mt-1">
+            Hecho con ❤️ para la comunidad de Tizayuca
+          </p>
+        </div>
+
+        <div class="flex gap-6 text-sm">
+          <a
+            href="#"
+            class="text-white/70 hover:text-primary-400 transition-colors duration-300"
+            >Términos de Servicio</a
+          >
+          <a
+            href="#"
+            class="text-white/70 hover:text-primary-400 transition-colors duration-300"
+            >Privacidad</a
+          >
+          <a
+            href="#"
+            class="text-white/70 hover:text-primary-400 transition-colors duration-300"
+            >Cookies</a
+          >
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- Elementos decorativos -->
+  <div
+    class="absolute top-10 left-10 w-32 h-32 bg-primary-500/10 rounded-full blur-xl animate-float"
+  >
+  </div>
+  <div
+    class="absolute bottom-10 right-10 w-40 h-40 bg-accent-500/10 rounded-full blur-xl animate-float"
+    style="animation-delay: 1s;"
+  >
+  </div>
+
+  <!-- Onda decorativa -->
+  <div
+    class="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-50"
+  >
   </div>
 </footer>
