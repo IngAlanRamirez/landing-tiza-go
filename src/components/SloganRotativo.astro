@@ -1,5 +1,5 @@
 ---
-// Componente de slogans rotativos para Tiza Go con glasmorfismo
+// Componente de slogans rotativos para Tiza Go con animaciones dinámicas
 const slogans = [
   "🏍️ Desde el mercado al fraccionamiento, volando con Tiza Go",
   "🚀 Aquí no hay Uber Eats, pero sí hay Tiza Go",
@@ -9,65 +9,99 @@ const slogans = [
 ];
 ---
 
-<section class="py-16 relative overflow-hidden">
+<section
+  id="slogan-section"
+  class="py-16 relative overflow-hidden animate-on-scroll"
+>
   <!-- Contenedor principal con glasmorfismo -->
   <div class="max-w-6xl mx-auto px-4">
     <div
-      class="glass rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
+      class="glass rounded-3xl p-8 md:p-12 text-center relative overflow-hidden transform transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl"
     >
-      <!-- Efectos de fondo -->
+      <!-- Efectos de fondo animados -->
       <div
-        class="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-3xl animate-pulse"
+        class="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-3xl animate-pulse-slow"
+      >
+      </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent rounded-3xl animate-shine"
       >
       </div>
 
       <!-- Contenido principal -->
       <div class="relative z-10">
-        <!-- Título -->
+        <!-- Título con animación de entrada -->
         <h2
-          class="text-2xl md:text-3xl font-bold text-white mb-8 animate-fade-in"
+          class="text-2xl md:text-3xl font-bold text-white mb-8 animate-fade-in-down"
         >
           💫 Lo que dicen de nosotros
         </h2>
 
-        <!-- Slogan rotativo -->
+        <!-- Slogan rotativo con efectos mejorados -->
         <div class="relative h-24 md:h-32 flex items-center justify-center">
           <div
-            class="text-2xl md:text-4xl lg:text-5xl font-black text-white transition-all duration-1000 transform px-4 leading-tight"
+            class="text-2xl md:text-4xl lg:text-5xl font-black text-white transition-all duration-1000 transform px-4 leading-tight slogan-text"
             data-slogan
-            style="text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);"
+            style="text-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(245, 158, 11, 0.3);"
           >
             {slogans[0]}
           </div>
+
+          <!-- Efectos de resplandor detrás del texto -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-accent-500/30 rounded-xl blur-lg opacity-0 animate-text-glow"
+          >
+          </div>
         </div>
 
-        <!-- Indicadores -->
-        <div class="flex justify-center gap-2 mt-8">
+        <!-- Indicadores interactivos mejorados -->
+        <div class="flex justify-center gap-3 mt-8">
           {
             slogans.map((_, index) => (
               <div
-                class="w-3 h-3 rounded-full bg-white/30 transition-all duration-500 slogan-indicator"
+                class="w-4 h-4 rounded-full bg-white/30 transition-all duration-500 cursor-pointer hover:scale-125 slogan-indicator transform hover:bg-primary-400"
                 data-index={index}
-                class:list={index === 0 ? "bg-primary-500 scale-125" : ""}
+                class:list={
+                  index === 0
+                    ? "bg-primary-500 scale-125 shadow-lg shadow-primary-500/50"
+                    : ""
+                }
               />
             ))
           }
         </div>
+
+        <!-- Texto adicional con animación -->
+        <p
+          class="text-white/70 mt-6 text-lg animate-fade-in-up"
+          style="animation-delay: 0.5s;"
+        >
+          ⭐ Testimonios reales de la comunidad de Tizayuca
+        </p>
       </div>
 
-      <!-- Elementos decorativos -->
+      <!-- Elementos decorativos flotantes -->
       <div
-        class="absolute top-4 left-4 w-8 h-8 bg-accent-500/30 rounded-full animate-ping"
+        class="absolute top-4 left-4 w-8 h-8 bg-accent-500/30 rounded-full animate-ping animate-float-gentle"
       >
       </div>
       <div
-        class="absolute bottom-4 right-4 w-6 h-6 bg-primary-500/30 rounded-full animate-ping"
+        class="absolute bottom-4 right-4 w-6 h-6 bg-primary-500/30 rounded-full animate-ping animate-bounce-gentle"
         style="animation-delay: 1s;"
       >
       </div>
       <div
-        class="absolute top-1/2 left-4 w-4 h-4 bg-accent-400/30 rounded-full animate-ping"
+        class="absolute top-1/2 left-4 w-4 h-4 bg-accent-400/30 rounded-full animate-ping animate-pulse-gentle"
         style="animation-delay: 2s;"
+      >
+      </div>
+      <div
+        class="absolute top-1/4 right-8 w-3 h-3 bg-primary-400/40 rounded-full animate-float-particle"
+      >
+      </div>
+      <div
+        class="absolute bottom-1/4 left-8 w-2 h-2 bg-accent-400/40 rounded-full animate-float-particle"
+        style="animation-delay: 1.5s;"
       >
       </div>
     </div>
@@ -87,41 +121,245 @@ const slogans = [
     const indicators = document.querySelectorAll(".slogan-indicator");
 
     function updateSlogan() {
-      // Animación de salida
-      sloganElement.style.transform = "translateY(-20px)";
+      // Animación de salida con efecto de deslizamiento
+      sloganElement.style.transform = "translateY(-20px) scale(0.95)";
       sloganElement.style.opacity = "0";
+      sloganElement.style.filter = "blur(5px)";
 
       setTimeout(() => {
         currentIndex = (currentIndex + 1) % slogans.length;
         sloganElement.textContent = slogans[currentIndex];
 
-        // Actualizar indicadores
+        // Actualizar indicadores con animaciones
         indicators.forEach((indicator, index) => {
           if (index === currentIndex) {
-            indicator.classList.add("bg-primary-500", "scale-125");
+            indicator.classList.add(
+              "bg-primary-500",
+              "scale-125",
+              "shadow-lg",
+              "shadow-primary-500/50"
+            );
             indicator.classList.remove("bg-white/30");
+            // Efecto de pulso
+            indicator.style.animation = "pulse 0.6s ease-in-out";
           } else {
-            indicator.classList.remove("bg-primary-500", "scale-125");
+            indicator.classList.remove(
+              "bg-primary-500",
+              "scale-125",
+              "shadow-lg",
+              "shadow-primary-500/50"
+            );
             indicator.classList.add("bg-white/30");
+            indicator.style.animation = "";
           }
         });
 
-        // Animación de entrada
-        sloganElement.style.transform = "translateY(0)";
-        sloganElement.style.opacity = "1";
+        // Animación de entrada con efecto de aparición
+        setTimeout(() => {
+          sloganElement.style.transform = "translateY(0) scale(1)";
+          sloganElement.style.opacity = "1";
+          sloganElement.style.filter = "blur(0px)";
+        }, 100);
       }, 300);
     }
 
-    // Cambiar cada 4 segundos
-    setInterval(updateSlogan, 4000);
+    // Cambiar cada 4 segundos con pausa al hacer hover
+    let intervalId = setInterval(updateSlogan, 4000);
 
-    // Hacer clickeable los indicadores
+    // Pausar al hacer hover en el contenedor
+    const container = document.querySelector("#slogan-section");
+    container.addEventListener("mouseenter", () => {
+      clearInterval(intervalId);
+    });
+
+    container.addEventListener("mouseleave", () => {
+      intervalId = setInterval(updateSlogan, 4000);
+    });
+
+    // Hacer clickeable los indicadores con efectos
     indicators.forEach((indicator, index) => {
       indicator.addEventListener("click", () => {
-        currentIndex = index - 1; // -1 porque updateSlogan incrementa
-        updateSlogan();
+        if (index !== currentIndex) {
+          currentIndex = index - 1; // -1 porque updateSlogan incrementa
+          updateSlogan();
+
+          // Reiniciar el intervalo
+          clearInterval(intervalId);
+          intervalId = setInterval(updateSlogan, 4000);
+        }
       });
-      indicator.style.cursor = "pointer";
+
+      // Efectos hover en indicadores
+      indicator.addEventListener("mouseenter", () => {
+        if (!indicator.classList.contains("bg-primary-500")) {
+          indicator.style.transform = "scale(1.1)";
+          indicator.style.backgroundColor = "rgba(220, 38, 38, 0.6)";
+        }
+      });
+
+      indicator.addEventListener("mouseleave", () => {
+        if (!indicator.classList.contains("bg-primary-500")) {
+          indicator.style.transform = "";
+          indicator.style.backgroundColor = "";
+        }
+      });
     });
+
+    // Animación de entrada cuando el elemento es visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-slide-in-up");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(container);
   </script>
 </section>
+
+<style>
+  /* Animaciones adicionales para slogans */
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%) skewX(-15deg);
+    }
+    100% {
+      transform: translateX(200%) skewX(-15deg);
+    }
+  }
+
+  @keyframes text-glow {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes float-particle {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    50% {
+      transform: translateY(-5px) translateX(-5px);
+    }
+    75% {
+      transform: translateY(-15px) translateX(3px);
+    }
+  }
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(50px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-shine {
+    animation: shine 3s ease-in-out infinite;
+  }
+
+  .animate-text-glow {
+    animation: text-glow 4s ease-in-out infinite;
+  }
+
+  .animate-float-particle {
+    animation: float-particle 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 0.8s ease-out;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out;
+  }
+
+  .animate-float-gentle {
+    animation: float-gentle 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-gentle {
+    animation: pulse-gentle 2s ease-in-out infinite;
+  }
+
+  @keyframes float-gentle {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes bounce-gentle {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes pulse-gentle {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .slogan-text {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slogan-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shine 2s infinite;
+  }
+</style>
