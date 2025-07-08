@@ -11,20 +11,20 @@ const slogans = [
 
 <section
   id="slogan-section"
-  class="py-16 relative overflow-hidden animate-on-scroll"
+  class="py-12 sm:py-16 relative overflow-hidden animate-on-scroll"
 >
   <!-- Contenedor principal con glasmorfismo -->
-  <div class="max-w-6xl mx-auto px-4">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div
-      class="glass rounded-3xl p-8 md:p-12 text-center relative overflow-hidden transform transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl"
+      class="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center relative overflow-hidden transform transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl"
     >
       <!-- Efectos de fondo animados -->
       <div
-        class="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-3xl animate-pulse-slow"
+        class="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-accent-500/20 rounded-2xl sm:rounded-3xl animate-pulse-slow"
       >
       </div>
       <div
-        class="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent rounded-3xl animate-shine"
+        class="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent rounded-2xl sm:rounded-3xl animate-shine"
       >
       </div>
 
@@ -32,15 +32,17 @@ const slogans = [
       <div class="relative z-10">
         <!-- Título con animación de entrada -->
         <h2
-          class="text-2xl md:text-3xl font-bold text-white mb-8 animate-fade-in-down"
+          class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 sm:mb-8 animate-fade-in-down"
         >
           💫 Lo que dicen de nosotros
         </h2>
 
         <!-- Slogan rotativo con efectos mejorados -->
-        <div class="relative h-24 md:h-32 flex items-center justify-center">
+        <div
+          class="relative h-20 sm:h-24 md:h-32 flex items-center justify-center px-4"
+        >
           <div
-            class="text-2xl md:text-4xl lg:text-5xl font-black text-white transition-all duration-1000 transform px-4 leading-tight slogan-text"
+            class="text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white transition-all duration-1000 transform leading-tight slogan-text text-center"
             data-slogan
             style="text-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(245, 158, 11, 0.3);"
           >
@@ -55,11 +57,11 @@ const slogans = [
         </div>
 
         <!-- Indicadores interactivos mejorados -->
-        <div class="flex justify-center gap-3 mt-8">
+        <div class="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 flex-wrap">
           {
             slogans.map((_, index) => (
               <div
-                class="w-4 h-4 rounded-full bg-white/30 transition-all duration-500 cursor-pointer hover:scale-125 slogan-indicator transform hover:bg-primary-400"
+                class="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white/30 transition-all duration-500 cursor-pointer hover:scale-125 slogan-indicator transform hover:bg-primary-400"
                 data-index={index}
                 class:list={
                   index === 0
@@ -73,34 +75,34 @@ const slogans = [
 
         <!-- Texto adicional con animación -->
         <p
-          class="text-white/70 mt-6 text-lg animate-fade-in-up"
+          class="text-white/70 mt-4 sm:mt-6 text-base sm:text-lg animate-fade-in-up px-4"
           style="animation-delay: 0.5s;"
         >
           ⭐ Testimonios reales de la comunidad de Tizayuca
         </p>
       </div>
 
-      <!-- Elementos decorativos flotantes -->
+      <!-- Elementos decorativos flotantes - responsivos -->
       <div
-        class="absolute top-4 left-4 w-8 h-8 bg-accent-500/30 rounded-full animate-ping animate-float-gentle"
+        class="absolute top-3 sm:top-4 left-3 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 bg-accent-500/30 rounded-full animate-ping animate-float-gentle"
       >
       </div>
       <div
-        class="absolute bottom-4 right-4 w-6 h-6 bg-primary-500/30 rounded-full animate-ping animate-bounce-gentle"
+        class="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 bg-primary-500/30 rounded-full animate-ping animate-bounce-gentle"
         style="animation-delay: 1s;"
       >
       </div>
       <div
-        class="absolute top-1/2 left-4 w-4 h-4 bg-accent-400/30 rounded-full animate-ping animate-pulse-gentle"
+        class="absolute top-1/2 left-2 sm:left-4 w-3 h-3 sm:w-4 sm:h-4 bg-accent-400/30 rounded-full animate-ping animate-pulse-gentle"
         style="animation-delay: 2s;"
       >
       </div>
       <div
-        class="absolute top-1/4 right-8 w-3 h-3 bg-primary-400/40 rounded-full animate-float-particle"
+        class="hidden sm:block absolute top-1/4 right-6 sm:right-8 w-2 h-2 sm:w-3 sm:h-3 bg-primary-400/40 rounded-full animate-float-particle"
       >
       </div>
       <div
-        class="absolute bottom-1/4 left-8 w-2 h-2 bg-accent-400/40 rounded-full animate-float-particle"
+        class="hidden sm:block absolute bottom-1/4 left-6 sm:left-8 w-1 h-1 sm:w-2 sm:h-2 bg-accent-400/40 rounded-full animate-float-particle"
         style="animation-delay: 1.5s;"
       >
       </div>

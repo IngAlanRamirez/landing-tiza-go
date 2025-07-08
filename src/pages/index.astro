@@ -1,23 +1,84 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Features from "../components/Features.astro";
 import SloganRotativo from "../components/SloganRotativo.astro";
+import Features from "../components/Features.astro";
 import FAQ from "../components/FAQ.astro";
 import Contacto from "../components/Contacto.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-  <Hero />
-  <SloganRotativo />
-  <Features />
-  <FAQ />
-  <Contacto />
-  <Footer />
-  <WhatsAppButton />
+<Layout title="Tiza Go - La app de entregas más rápida de Tizayuca">
+  <main>
+    <!-- Indicador de resolución para testing (solo en desarrollo) -->
+    <div
+      id="resolution-indicator"
+      class="fixed top-4 left-4 z-50 bg-black/80 text-white text-xs px-3 py-2 rounded-lg backdrop-blur-sm transition-opacity duration-300 opacity-0 hover:opacity-100"
+    >
+      <div class="block sm:hidden">📱 Mobile (&lt; 640px)</div>
+      <div class="hidden sm:block md:hidden">📱 Tablet (640px - 768px)</div>
+      <div class="hidden md:block lg:hidden">💻 Desktop (768px - 1024px)</div>
+      <div class="hidden lg:block xl:hidden">🖥️ Large (1024px - 1280px)</div>
+      <div class="hidden xl:block">🖥️ XL (&gt; 1280px)</div>
+    </div>
+
+    <Hero />
+    <SloganRotativo />
+    <Features />
+    <FAQ />
+    <Contacto />
+    <Footer />
+    <WhatsAppButton />
+  </main>
 </Layout>
+
+<script>
+  // Script para mostrar el indicador de resolución en desarrollo
+  document.addEventListener("DOMContentLoaded", function () {
+    const indicator = document.getElementById("resolution-indicator");
+    let timeout: NodeJS.Timeout;
+
+    // Mostrar el indicador por 3 segundos al cargar la página
+    if (indicator) {
+      indicator.style.opacity = "1";
+      timeout = setTimeout(() => {
+        indicator.style.opacity = "0";
+      }, 3000);
+    }
+
+    // Mostrar/ocultar con tecla 'R' para testing responsive
+    document.addEventListener("keydown", function (e) {
+      if (e.key.toLowerCase() === "r" && indicator) {
+        if (indicator.style.opacity === "1") {
+          indicator.style.opacity = "0";
+        } else {
+          indicator.style.opacity = "1";
+          clearTimeout(timeout);
+          timeout = setTimeout(() => {
+            indicator.style.opacity = "0";
+          }, 5000);
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Estilos adicionales para validación responsive */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Asegurar que no haya scroll horizontal */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Debug grid para desarrollo (solo visible con tecla 'G') */
+  .debug-grid {
+    background-image: linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+</style>
