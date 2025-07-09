@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ingalanramirez.github.io/landing-tiza-go/sitemap-index.xml
+Sitemap: https://ingalanramirez.github.io/landing-tiza-go/sitemap-0.xml
+
+# Optimizado para SEO local
+# Permitir indexación completa del sitio 
