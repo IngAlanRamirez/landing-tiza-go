@@ -3,23 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://ingalanramirez.github.io/landing-tiza-go/"
+    />
+
+    <!-- Favicon optimizado -->
     <link
       rel="icon"
       type="image/png"
       href={`${import.meta.env.BASE_URL}/TizaGO.png`}
     />
+    <link
+      rel="apple-touch-icon"
+      href={`${import.meta.env.BASE_URL}/TizaGO.png`}
+    />
+
+    <!-- SEO Meta Tags -->
     <meta name="generator" content={Astro.generator} />
     <title>Tiza Go - La app de entregas local más rápida de Tizayuca</title>
     <meta
       name="description"
-      content="Tiza Go es la aplicación de entregas local más rápida de Tizayuca. Registra tu negocio y comienza a recibir pedidos hoy mismo."
+      content="Tiza Go es la aplicación de entregas local más rápida de Tizayuca. Registra tu negocio y comienza a recibir pedidos hoy mismo. Conectamos negocios locales con toda la ciudad."
     />
+    <meta
+      name="keywords"
+      content="app entregas, delivery Tizayuca, aplicación local, negocios Tizayuca, delivery app, entregas rápidas, app mexicana, servicio local"
+    />
+    <meta name="author" content="Tiza Go" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://ingalanramirez.github.io/landing-tiza-go/"
+    />
+    <meta
+      property="og:title"
+      content="Tiza Go - La app de entregas local más rápida de Tizayuca"
+    />
+    <meta
+      property="og:description"
+      content="Conectamos tu negocio con toda la ciudad. La aplicación de entregas local más rápida de Tizayuca. ¡Registra tu negocio GRATIS!"
+    />
+    <meta
+      property="og:image"
+      content="https://ingalanramirez.github.io/landing-tiza-go/TizaGO.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Tiza Go" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://ingalanramirez.github.io/landing-tiza-go/"
+    />
+    <meta
+      name="twitter:title"
+      content="Tiza Go - La app de entregas local más rápida de Tizayuca"
+    />
+    <meta
+      name="twitter:description"
+      content="Conectamos tu negocio con toda la ciudad. ¡Registra tu negocio GRATIS!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://ingalanramirez.github.io/landing-tiza-go/TizaGO.png"
+    />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Tiza Go",
+        "description": "La aplicación de entregas local más rápida de Tizayuca",
+        "url": "https://ingalanramirez.github.io/landing-tiza-go/",
+        "logo": "https://ingalanramirez.github.io/landing-tiza-go/TizaGO.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tizayuca",
+          "addressRegion": "Hidalgo",
+          "addressCountry": "MX"
+        },
+        "sameAs": [],
+        "serviceType": "Delivery Service",
+        "areaServed": {
+          "@type": "City",
+          "name": "Tizayuca"
+        }
+      }
+    </script>
+
+    <!-- Optimized Google Fonts - Reduced to only Poppins with display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Performance Optimizations -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+    <!-- Core Web Vitals Optimization -->
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Critical CSS inline (will be handled by Astro) -->
+    <style>
+      /* Critical styles for above-the-fold content */
+      body {
+        background: linear-gradient(
+          135deg,
+          #3b82f6 0%,
+          #1e40af 50%,
+          #1e3a8a 100%
+        );
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
   </head>
   <body
     class="bg-gradient-to-br from-primary-600 via-secondary-800 to-secondary-900 min-h-screen relative overflow-x-hidden"
@@ -55,7 +165,7 @@
     margin: 0;
     width: 100%;
     min-height: 100vh;
-    font-family: "Poppins", "Montserrat", "Nunito", sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
   body {
